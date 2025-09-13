@@ -1,3 +1,4 @@
+/* ============== Global Variables ============== */
 :root {
   /* Colors */
   --color-yellow: #f4d04e;
@@ -8,12 +9,13 @@
   --font-base: "Figtree", sans-serif;
 
   /* Typography presets */
-  --tp1-font:  800 24px/150% var(--font-base); /* Extra Bold, 24px */
+  --tp1-font: 800 24px/150% var(--font-base); /* Extra Bold, 24px */
   --tp2-font: 500 16px/150% var(--font-base); /* Medium, 16px */
   --tp3-font: 500 14px/150% var(--font-base); /* Medium, 14px */
   --tp3b-font: 800 14px/150% var(--font-base); /* weight size/line-height font-family */
 }
 
+/* ============== Reset & Base Styles ============== */
 * {
   margin: 0;
   padding: 0;
@@ -30,23 +32,27 @@ body {
   align-items: center;
 }
 
+/* ============== Card Container ============== */
 .card-container {
-  width: 384px;
+  max-width: 384px;
   padding: 24px;
   background-color: white;
   border-radius: 20px;
   border: 1px solid var(--color-gray);
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1) ;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1); /* Strong shadow for card effect */
 
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+/* ============== Blog Image ============== */
 .blog-image {
   border-radius: 10px;
+  
 }
 
+/* ============== Content Section ============== */
 .content {
   display: flex;
   flex-direction: column;
@@ -62,39 +68,52 @@ body {
 }
 
 .publish-date {
-font: var(--tp3-font);
-color: var(--color-black);
-
-  /* font-weight: 500;
-  font-size: 14px;
-  line-height: 150%; */
+  font: var(--tp3-font);
+  color: var(--color-black);
 }
+
 .title {
-    font: var(--tp1-font);
-     color: var(--color-black);
-
-}
-.description{
-    font: var(--tp2-font);
-    color: var(--color-gray);
-   
+  font: var(--tp1-font);
+  color: var(--color-black);
 }
 
-.author{
-    display: flex;
-    align-items: center;
-    gap: 12px ;
-}
-.author-pic{
-    height: 32px;
-    width: 32px;
+.description {
+  font: var(--tp2-font);
+  color: var(--color-gray);
 }
 
-.author-name{
-    font: var(--tp3b-font);
+/* ============== Author Section ============== */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-h1:hover{
-    color: var(--color-yellow);
-    cursor: pointer;
+.author-pic {
+  height: 32px;
+  width: 32px;
+}
+
+.author-name {
+  font: var(--tp3b-font);
+}
+
+/* ============== Hover Effects ============== */
+h1:hover {
+  color: var(--color-yellow);
+  cursor: pointer;
+}
+
+
+@media (max-width: 375px) {
+  .card-container{
+    max-width: 327px;
+  }
+
+  .blog-image {
+  max-width: 280px;
+}
+.title{
+  font-size: 20px;
+}
 }
